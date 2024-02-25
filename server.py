@@ -1,7 +1,17 @@
 from flask import Flask, render_template,url_for,send_file,make_response,request,redirect,send_from_directory
-#import 
+from flask_socketio import SocketIO, send, rooms, emit, join_room, close_room, leave_room
 import databaseutils
 app = Flask(__name__)
+socketio = SocketIO(app, cors_allowed_orgins="*")
+
+#socket functions 
+##########################################
+@socketio.on('join')
+def on_join(data):
+    room = data['lobby']
+    join_room(room)
+    emit( 'my response',{'msg':room}, to=room)
+
 
 #Flask Helper functions and routes
 #------------------------
@@ -74,4 +84,5 @@ def game():
 #-------------------------------
 # Run the application
 
-app.run('0.0.0.0',8080)
+#app.run('0.0.0.0',8080)
+socketio.run(app=app, host='0.0.0.0', port=8080, allow_unsafe_werkzeug=True)
