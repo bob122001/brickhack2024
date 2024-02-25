@@ -1,14 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+
 :root {
   --darkGreen: #0a231f;
-  --lightGreen: ;
-  --creme: ;
-  --textWhite: ;
+  --lightGreen: #567470;
+  --creme: #f3eeed;
+  --textWhite: white;
   --textBlack: ;
 }
 
 body {
   margin: 0;
-  font-family: 'Bookman Old Style';
+  font-family: 'Krona One', sans-serif;
+  font-weight: 400;
+  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

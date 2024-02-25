@@ -13,16 +13,30 @@
   }
 }
 
-.App-header {
-  background-color: var(--darkGreen);
+.App-page {
+  background-color: var(--lightGreen);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--textWhite);
 }
+
+.App-form-container {
+  background-color: var(--darkGreen);
+  min-height: 90vh;
+  width: 45rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(45px);
+  color: var(--textWhite);
+}
+
+
 
 .App-link {
   color: #61dafb;
