@@ -1,7 +1,6 @@
 #Ai helper functions
 from openai import OpenAI
-client = OpenAI()
-
+client = OpenAI(api_key='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')
 def generate_image(prompt):
 
     response = client.images.generate(
@@ -14,7 +13,7 @@ def generate_image(prompt):
 
     image_url = response.data[0].url
 
-def generate_variation_from_image():
+def generate_variation_from_image(image):
     response = client.images.create_variation(
     image=open("image_edit_original.png", "rb"),
     n=2,
@@ -22,3 +21,13 @@ def generate_variation_from_image():
     )
 
     image_url = response.data[0].url
+
+def openai_make_audio(prompt):
+
+    response = client.audio.speech.create(
+        model="tts-1",
+        voice="alloy",
+        input=prompt,
+    )
+
+    response.stream_to_file("output.mp3")
