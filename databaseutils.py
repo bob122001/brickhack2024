@@ -40,20 +40,22 @@ def delete_lobby(lobby_id):
 #Game helper functions
     
 
-def create_game():
-    pass
+def create_game(game_id,story):
+    game = games.insert_one({'1':{"money":5000,'cred':0},'game':{'round':0,'story':story},'2':{"money":5000,'cred':0},'lobby_id':game_id})
+    return game
 
 
-def fetch_game():
-    pass
+def fetch_game(game_id):
+    game = games.find_one({'lobby_id':game_id})
+    return game
 
 
 ######################################################
 
 #Evidance Helper functions
 
-def fetch_evidance():
-    pass
+def fetch_evidance(evidance_id):
+    return evidance.find_one({'_id':evidance_id})
 
 
 ######################################################
