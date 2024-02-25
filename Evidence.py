@@ -5,4 +5,4 @@ class Evidence:
         self.points = points
         self.side = side
         self.evidenceId = evidenceId
-   
+    
