@@ -18,6 +18,13 @@ def index():
     resp = make_response(render_template('index.html'),200)
     return resp
 
+@app.route('/gen_evidance',methods=["POST","GET"])
+def image():
+    data = request.get_json()
+    print(data)
+    resp = make_response(render_template('index.html'),200)
+    return resp
+
 
 
 app.run('0.0.0.0',8080)
