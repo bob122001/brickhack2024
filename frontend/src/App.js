@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          This is going to be a nice sentence to test out some fonts on our background color to check the readability. This is gonna be important! Woohoo!!
         </p>
         <a
           className="App-link"

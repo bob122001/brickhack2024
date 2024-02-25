@@ -1,8 +1,14 @@
+:root {
+  --darkGreen: #0a231f;
+  --lightGreen: ;
+  --creme: ;
+  --textWhite: ;
+  --textBlack: ;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Bookman Old Style';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
