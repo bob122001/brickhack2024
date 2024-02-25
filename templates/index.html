@@ -9,8 +9,12 @@
         <h1>
             Temp Body will do later :P
         </h1>
-        <img src="">
-        <input type="text" id="eprompt">
-        <button onclick="generate_evidance()"></button>
+        <form action="/join_code" method="POST">
+            <input type="text" placeholder="Game Code" id="code" name="code">
+            <input type="submit" placeholder="Join Game" value="Join Game">
+        </form>
+        <form action="/make_lobby">
+            <input type="submit" placeholder="Make Lobby" id="Make Lobby" value="Make Lobby">
+        </form>
     </body>
 </html>
