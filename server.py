@@ -12,6 +12,34 @@ def on_join(data):
     join_room(room)
     emit( 'my response',{'msg':room}, to=room)
 
+@socketio.on('inital_prompt')
+def initial_prompt(data):
+    room = data['lobby']
+    join_room(room)
+    #load in the prompt
+    emit( 'my response',{'msg':'story prompt'}, to=room)
+
+@socketio.on('ready')
+def ready(data):
+    room = data['lobby']
+    join_room(room)
+    #set user to ready -> send back the status of ready so the box changes
+    emit( 'my response',{'msg':room}, to=room)
+    
+@socketio.on('game_start')
+def game_start(data):
+    room = data['lobby']
+    join_room(room)
+    #set user to ready -> send back the status of ready so the box changes
+    emit( 'my response',{'msg':room}, to=room)
+
+@socketio.on('end_round')
+def end_round(data):
+    room = data['lobby']
+    join_room(room)
+    #set user to ready -> send back the status of ready so the box changes
+    emit( 'my response',{'msg':room}, to=room)
+
 
 #Flask Helper functions and routes
 #------------------------
@@ -79,6 +107,10 @@ def join_game():
 @app.route('/game')
 def game():
     return render_template('game.html')
+
+@app.route('/card')
+def card():
+    return render_template('cards.html')
 
 
 #-------------------------------
