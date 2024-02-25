@@ -16,3 +16,14 @@ class Juror:
                 self.defendantPoints += evidence.points
                 if self.defendantPoints >= 100:
                     self.sideTaken = Constants.PROSECUTOR
+                    
+    def refute(self, evidence : Evidence):
+        if random.random() < evidence.probablilty:
+            if evidence.side == Constants.PROSECUTOR:
+                self.defendantPoints -= evidence.points
+                if self.prosecutorPoints >= 100:
+                    self.sideTaken = Constants.PROSECUTOR
+            else:
+                self.prosecutorPoints -= evidence.points
+                if self.defendantPoints >= 100:
+                    self.sideTaken = Constants.PROSECUTOR
