@@ -1,9 +1,10 @@
 import Evidence, random, Constants
 
 class Juror:
-    sideTaken = None
-    prosecutorPoints = 0
-    defendantPoints = 0
+    def __init__(self):
+        self.sideTaken = None
+        self.prosecutorPoints = 0
+        self.defendantPoints = 0
 
     def reviewEvidence(self, evidence):
         if random.random() < evidence.probablilty:

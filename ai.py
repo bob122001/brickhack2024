@@ -1,6 +1,6 @@
 #Ai helper functions
 from openai import OpenAI
-client = OpenAI(api_key='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')
+client = OpenAI()
 def generate_image(prompt):
 
     response = client.images.generate(
